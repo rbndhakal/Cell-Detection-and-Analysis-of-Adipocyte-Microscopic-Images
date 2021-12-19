@@ -86,19 +86,19 @@ int main( )
     cout << contours.size() << endl;
     imshow( "Result window", drawing );
 
-    //ofstream outputFile,fs;
+    ofstream outputFile,fs;
 
-    //outputFile.open("E:\\test1.csv");
-    //outputFile << "Cell Number" << "," << "Cell Area" << endl;
+    outputFile.open("E:\\test1.csv");
+    outputFile << "Cell Number" << "," << "Cell Area" << endl;
 
-    //for( int i = 0; i< contours.size(); i++ )
-    //{
-    //    outputFile << i << "," << contourArea(contours[i])*coe*coe  << endl;
-    //}
-    //outputFile.close();
+    for( int i = 0; i< contours.size(); i++ )
+    {
+        outputFile << i << "," << contourArea(contours[i])*coe*coe  << endl;
+    }
+    outputFile.close();
 
     //SAVE image
-    //imwrite("image1_result.jpg",drawing);// it will store the image in name "result.jpg"
+    imwrite("image1_result.jpg",drawing);// it will store the image in name "result.jpg"
 
 
     waitKey(0);
